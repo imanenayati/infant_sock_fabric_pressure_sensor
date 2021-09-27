@@ -6,13 +6,12 @@ Department of Orthopedic Surgery
 University of California, Los Angeles
 imanhenayati@ucla.edu
 
-Author's Notes: The following project records value from a fabric pressure sensor
-positioned in the heal area of an infant's sock. The pressure sensor readings are
-evaluated and a RBG LED signals a threshold value has been reached. The LED emits
-a constant red color until the threshold value is met, whereby the LED turns off,
-indicating threshold pressure has been successfully met. The following code does
-not support low-energy bluetooth functionality. Contact author for inquiries and
-support.
+Author's Notes: The following project records values from an infant's sock embedded with
+a fabric pressure sensor positioned below the calcaneus. The pressure sensor readings are
+evaluated and a RBG LED signals a threshold value has been reached. The LED emits a 
+constant red color until the threshold value is met, whereby the LED turns off,
+indicating threshold pressure has been successfully met. The following code does not 
+support low-energy bluetooth functionality. Contact author for inquiries and support.
 
 Last Updated: June 1, 2021
 */
