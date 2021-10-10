@@ -13,18 +13,15 @@ constant red color until the threshold value is met, whereby the LED turns off,
 indicating threshold pressure has been successfully met. The following code does not 
 support low-energy bluetooth functionality. Contact author for inquiries and support.
 
-Last Updated: June 1, 2021
+Last Updated: October 10th, 2021
 */
 
-  #include <Filters.h>
+  #include <Filters.h>          //this library can be found here: https://www.arduinolibraries.info/libraries/filters
   
-  int sensorOutValue = 0;       //value from outside pressure sensor
+  int sensorOutValue = 0;       //value from pressure sensor
   int FilteredSensorOutValue = 0;
   
 void setup() {
-  
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
 
   // initialize analog pin A0 as sensor input
   pinMode(A0, INPUT_PULLUP);
@@ -37,19 +34,19 @@ void setup() {
 void loop() {
 
 
-  // read the analog in values from digital pin:
+  //read the analog in values from analog pin:
   sensorOutValue = analogRead(A0);
 
-  //Set up for LowPass filter
+  //set up for LowPass filter
   FilterOnePole lowpassFilter(LOWPASS,50);
 
-  //Filter Heel sensor signal value due to high noise levels
+  //filter sensor signal value due to noise
   lowpassFilter.input(sensorOutValue);
 
-  //Create new variable to hold filtered signal
+  //create new variable to hold filtered signal value
   FilteredSensorOutValue = lowpassFilter.output();
 
-  //Serial.println("Sensor value = " );
+  Serial.println("Sensor value = " );
   Serial.println(FilteredSensorOutValue);  
 
   delay(10);
